@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Эволюция смартфонов Apple</title>
+</head>
+<body>
+  <h2>
+    <a href="site_1.html">Главная страница</a> 
+    <a href="site_2.html">Самые свежие модели</a> 
+    <a href="site_3.html">Таблица для сравнения айфонов</a>
+  </h2>
+  <p>
+    Иногда возникает задача сравнить модели iPhone по некоторым параметрам — ёмкость аккумулятора, качество камеры, размер оперативной памяти, и, как оказалось, простой таблицы сравнения параметров айфонов, отсортированных по годам нет.
+  </p>
+  <p>
+    Эта таблица как раз была создана чтобы решить этот вопрос исчерпывающе.
+  </p>
+
+  <details>
+    <summary>График</summary>
+      <form>
+        <table cellpadding="3">
+          <tr>
+            <td><strong>Значение по оси OX </strong></td>
+            <td><strong>Результат </strong></td>
+          </tr>
+          <tr>
+            <td><input  type="radio"  name="gender" value="w">Модель </td>
+            <td><input type="checkbox" name="language" value="0">Макс ёмкость </td>
+          </tr>
+          <tr>
+            <td><input  type="radio"  name="gender" value="w">Тип </td>
+            <td><input type="checkbox" name="language" value="1">Мин ёмкость </td>   
+          </tr>
+          <tr>
+            <td><input  type="radio"  name="gender" value="m">Год </td>
+            <td><input type="checkbox" name="language" value="2">Количество смартфонов</td>
+          </tr>
+        </table>
+        <input type="button" value="Построить">
+      </form>
+  </details>
+
+
+  <details>
+    <summary>Фильтр</summary>
+      <form>
+        <label for="model">Модель:</label>
+        <input type="text" id="model">
+          
+        <label for="tip">Тип:</label>
+        <input type="text" id="tip">
+          
+        <label>
+          Выпуск:
+          от <input type="text" name="year">
+        </label>
+        <label>
+          до <input type="text" name="year">
+        </label>
+          
+        <label>
+          Ёмкость:
+          от <input type="text" name="capacity">
+        </label>
+        <label>
+          до <input type="text" name="capacity">
+        </label>
+          
+        <label>
+          Вес:
+          от <input type="text" name="weight">
+        </label>
+        <label>
+          до <input type="text" name="weight">
+        </label>
+      </form>
+  </details>
+
+  <details>
+    <summary>Сортировка</summary>
+      <form>
+        Первый уровень: 
+        <select name="first level">
+          <option value="0" selected>Нет</option>
+          <option value="1">Модель</option>
+          <option value="2">Тип</option>
+          <option value="3">Номер модели</option>
+          <option value="4">Выпуск</option>
+          <option value="5">Ёмкость</option>
+          <option value="6">Вес</option>
+        </select>
+        По убыванию?
+        <input type="checkbox" name="first_level" value="0">
+      </form>
+
+      <form>
+        Второй уровень: 
+        <select name="second level">
+          <option value="0" selected>Нет</option>
+          <option value="1">Модель</option>
+          <option value="2">Тип</option>
+          <option value="3">Номер модели</option>
+          <option value="4">Выпуск</option>
+          <option value="5">Ёмкость</option>
+          <option value="6">Вес</option>
+        </select>
+          По убыванию? 
+        <input type="checkbox" name="second_level" value="1">
+      </form>
+
+      <form>
+        Третий уровень: 
+        <select name="third level">
+          <option value="0" selected>Нет</option>
+          <option value="1">Модель</option>
+          <option value="2">Тип</option>
+          <option value="3">Номер модели</option>
+          <option value="4">Выпуск</option>
+          <option value="5">Ёмкость</option>
+          <option value="6">Вес</option>
+        </select>
+          По убыванию? 
+        <input type="checkbox" name="third_level" value="2">
+      </form>
+  </details>
+
+
+<table border="1" cellspacing="0">
+  <tr>
+     <td>Модель</td>
+     <td>Тип</td>
+     <td>Номер модели</td>
+     <td>Выпуск, г</td>
+     <td>Ёмкость АКБ</td>
+     <td>Вес, г</td>
+  </tr>
+  <tr>
+     <td>iPhone 15</td>
+     <td>Pro Max</td>
+     <td>A2849</td>
+     <td>2023</td>
+     <td>4422</td>
+     <td>221</td>
+  </tr>
+  <tr>
+    <td>iPhone 15</td>
+    <td>Pro Max</td>
+    <td>A3108</td>
+    <td>2023</td>
+    <td>4422</td>
+    <td>221</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro Max</td>
+  <td>A3106</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>221</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro Max</td>
+  <td>A3105</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>221</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro</td>
+  <td>A2848</td>
+  <td>2023</td>
+  <td>3274</td>
+  <td>187</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro</td>
+  <td>A3102</td>
+  <td>2023</td>
+  <td>3274</td>
+  <td>187</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro</td>
+  <td>A3104</td>
+  <td>2023</td>
+  <td>3274</td>
+  <td>187</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Pro</td>
+  <td>A3101</td>
+  <td>2023</td>
+  <td>3274</td>
+  <td>187</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Plus</td>
+  <td>A2847</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>201</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Plus</td>
+  <td>A3094</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>201</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Plus</td>
+  <td>A3096</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>201</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Plus</td>
+  <td>A3093</td>
+  <td>2023</td>
+  <td>4422</td>
+  <td>201</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Defolt</td>
+  <td>A2846</td>
+  <td>2023</td>
+  <td>3049</td>
+  <td>171</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Defolt</td>
+  <td>A3090</td>
+  <td>2023</td>
+  <td>3049</td>
+  <td>171</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Defolt</td>
+  <td>A3092</td>
+  <td>2023</td>
+  <td>3049</td>
+  <td>171</td>
+ </tr>
+ <tr>
+  <td>iPhone 15</td>
+  <td>Defolt</td>
+  <td>A3089</td>
+  <td>2023</td>
+  <td>3049</td>
+  <td>171</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro Max</td>
+  <td>A2651</td>
+  <td>2022</td>
+  <td>4323</td>
+  <td>240</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro Max</td>
+  <td>A2896</td>
+  <td>2022</td>
+  <td>4323</td>
+  <td>240</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro Max</td>
+  <td>A2893</td>
+  <td>2022</td>
+  <td>4323</td>
+  <td>240</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro Max</td>
+  <td>A2895</td>
+  <td>2022</td>
+  <td>4323</td>
+  <td>240</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro Max</td>
+  <td>A2894</td>
+  <td>2022</td>
+  <td>4323</td>
+  <td>240</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro</td>
+  <td>A2650</td>
+  <td>2022</td>
+  <td>3200</td>
+  <td>206</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro</td>
+  <td>A2892</td>
+  <td>2022</td>
+  <td>3200</td>
+  <td>206</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro</td>
+  <td>A2889</td>
+  <td>2022</td>
+  <td>3200</td>
+  <td>206</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro</td>
+  <td>A2891</td>
+  <td>2022</td>
+  <td>3200</td>
+  <td>206</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Pro</td>
+  <td>A2890</td>
+  <td>2022</td>
+  <td>3200</td>
+  <td>206</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Plus</td>
+  <td>A2632</td>
+  <td>2022</td>
+  <td>4325</td>
+  <td>203</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Plus</td>
+  <td>A2888</td>
+  <td>2022</td>
+  <td>4325</td>
+  <td>203</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Plus</td>
+  <td>A2885</td>
+  <td>2022</td>
+  <td>4325</td>
+  <td>203</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Plus</td>
+  <td>A2887</td>
+  <td>2022</td>
+  <td>4325</td>
+  <td>203</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Plus</td>
+  <td>A2886</td>
+  <td>2022</td>
+  <td>4325</td>
+  <td>203</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Defolt</td>
+  <td>A2649</td>
+  <td>2022</td>
+  <td>3279</td>
+  <td>172</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Defolt</td>
+  <td>A2884</td>
+  <td>2022</td>
+  <td>3279</td>
+  <td>172</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Defolt</td>
+  <td>A2881</td>
+  <td>2022</td>
+  <td>3279</td>
+  <td>172</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Defolt</td>
+  <td>A2883</td>
+  <td>2022</td>
+  <td>3279</td>
+  <td>172</td>
+ </tr>
+ <tr>
+  <td>iPhone 14</td>
+  <td>Defolt</td>
+  <td>A2882</td>
+  <td>2022</td>
+  <td>3279</td>
+  <td>172</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro Max</td>
+  <td>A2484</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro Max</td>
+  <td>A2645</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro Max</td>
+  <td>A2641</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro Max</td>
+  <td>A2644</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro Max</td>
+  <td>A2643</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro</td>
+  <td>A2483</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro</td>
+  <td>A2640</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro</td>
+  <td>A2636</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro</td>
+  <td>A2639</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Pro</td>
+  <td>A2638</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Defolt</td>
+  <td>A2482</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Defolt</td>
+  <td>A2635</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Defolt</td>
+  <td>A2631</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Defolt</td>
+  <td>A2634</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Defolt</td>
+  <td>A2633</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Mini</td>
+  <td>A2481</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Mini</td>
+  <td>A2630</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Mini</td>
+  <td>A2626</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Mini</td>
+  <td>A2629</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+ <tr>
+  <td>iPhone 13</td>
+  <td>Mini</td>
+  <td>A2628</td>
+  <td>2021</td>
+  <td>4352</td>
+  <td>238</td>
+ </tr>
+</table>
+
+</body>
+</html>

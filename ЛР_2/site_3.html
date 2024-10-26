@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <meta charset="UTF-8">
   <title>Эволюция смартфонов Apple</title>
 </head>
 <body>
@@ -9,15 +10,15 @@
     <a href="site_2.html">Самые свежие модели</a> 
     <a href="site_3.html">Таблица для сравнения айфонов</a>
   </h2>
-    Иногда возникает задача сравнить модели iPhone по некоторым параметрам — ёмкость аккумулятора, 
-    качество камеры, размер оперативной памяти, и, как оказалось, простой таблицы сравнения параметров 
-    айфонов, отсортированных по годам нет. 
-    <p>Эта таблица как раз была создана чтобы решить этот вопрос исчерпывающе.</p>
-  </h2>
-
   <p>
-    <details>
-      <summary>График</summary>
+    Иногда возникает задача сравнить модели iPhone по некоторым параметрам — ёмкость аккумулятора, качество камеры, размер оперативной памяти, и, как оказалось, простой таблицы сравнения параметров айфонов, отсортированных по годам нет.
+  </p>
+  <p>
+    Эта таблица как раз была создана чтобы решить этот вопрос исчерпывающе.
+  </p>
+
+  <details>
+    <summary>График</summary>
       <form>
         <table cellpadding="3">
           <tr>
@@ -39,36 +40,46 @@
         </table>
         <input type="button" value="Построить">
       </form>
-    </details>
-  </p>
-  <p>
-    <details>
-      <summary>Фильтр</summary>
-      <form>
-        <label for="model">Модель:</label>
-        <input type="text" name="model" id="filter">
-          
-        <label for="tip">Тип:</label>
-        <input type="text" name="tip" id="filter">
-          
-        <label for="year">Выпуск:</label>
-        от <input type="text" name="year" id="filter">
-        до <input type="text" name="year" id="filter">
-          
-        <label for="capacity">Ёмкость:</label>
-        от <input type="text" name="capacity" id="filter">
-        до <input type="text" name="capacity" id="filter">
-          
-        <label for="weight">Вес:</label>
-        от <input type="text" name="weight" id="filter">
-        до <input type="text" name="weight" id="filter">
-      </form>
-    </details>
-  </p>
+  </details>
+
 
   <details>
-    <p>
-      <summary>Сортировка</summary>
+    <summary>Фильтр</summary>
+      <form>
+        <label for="model">Модель:</label>
+        <input type="text" id="model">
+          
+        <label for="tip">Тип:</label>
+        <input type="text" id="tip">
+          
+        <label>
+          Выпуск:
+          от <input type="text" name="year">
+        </label>
+        <label>
+          до <input type="text" name="year">
+        </label>
+          
+        <label>
+          Ёмкость:
+          от <input type="text" name="capacity">
+        </label>
+        <label>
+          до <input type="text" name="capacity">
+        </label>
+          
+        <label>
+          Вес:
+          от <input type="text" name="weight">
+        </label>
+        <label>
+          до <input type="text" name="weight">
+        </label>
+      </form>
+  </details>
+
+  <details>
+    <summary>Сортировка</summary>
       <form>
         Первый уровень: 
         <select name="first level">
@@ -77,32 +88,28 @@
           <option value="2">Тип</option>
           <option value="3">Номер модели</option>
           <option value="4">Выпуск</option>
-          <option value="5"><Ёмкость/option>
+          <option value="5">Ёмкость</option>
           <option value="6">Вес</option>
         </select>
-        По убыванию? 
+        По убыванию?
         <input type="checkbox" name="first_level" value="0">
       </form>
-    </p>
-  
-  <p>
-    <form>
-      Второй уровень: 
-      <select name="second level">
-        <option value="0" selected>Нет</option>
-        <option value="1">Модель</option>
-        <option value="2">Тип</option>
-        <option value="3">Номер модели</option>
-        <option value="4">Выпуск</option>
-        <option value="5"><Ёмкость/option>
-        <option value="6">Вес</option>
-      </select>
-        По убыванию? 
-      <input type="checkbox" name="second_level" value="1">
-    </form>
-  </p>
 
-    <p>
+      <form>
+        Второй уровень: 
+        <select name="second level">
+          <option value="0" selected>Нет</option>
+          <option value="1">Модель</option>
+          <option value="2">Тип</option>
+          <option value="3">Номер модели</option>
+          <option value="4">Выпуск</option>
+          <option value="5">Ёмкость</option>
+          <option value="6">Вес</option>
+        </select>
+          По убыванию? 
+        <input type="checkbox" name="second_level" value="1">
+      </form>
+
       <form>
         Третий уровень: 
         <select name="third level">
@@ -111,13 +118,12 @@
           <option value="2">Тип</option>
           <option value="3">Номер модели</option>
           <option value="4">Выпуск</option>
-          <option value="5"><Ёмкость/option>
+          <option value="5">Ёмкость</option>
           <option value="6">Вес</option>
         </select>
           По убыванию? 
         <input type="checkbox" name="third_level" value="2">
       </form>
-    </p>
   </details>
 
 

@@ -1,0 +1,14 @@
+mixin createMenu(menu, active)
+	each value, key in menu
+		if active == key
+			a.active(href= value)= key
+		else
+			a(href= value)= key
+
+mixin createMenuBuild(menu, active)
+	each value, key in menu
+		if key == 'Главная'
+			a(href= value)= 'Главная'
+			a.active(href= "#")= active
+		else
+			a(href= value)= key

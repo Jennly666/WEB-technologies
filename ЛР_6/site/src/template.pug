@@ -1,0 +1,22 @@
+include components/mixin.pug
+include components/data.pug
+
+doctype html
+html(lang="ru")
+    head
+        title #{title}
+
+    body
+        nav
+            .nav__title #{title}
+            .nav__menu
+                .nav__menu-block1
+                .nav__menu-block2
+                    block menuItem
+                        +createMenu(dictMenu, 'Главная')
+
+        block content
+
+        block footer
+            footer
+                h4 &copy; Романченко А.В., Б9122-09.03.04, 2024-2025

@@ -1,0 +1,128 @@
+alignment()
+	display block
+	margin auto
+
+body
+	margin 40px 50px
+	font-family Arial, sans-serif
+
+nav
+	display flex
+	height 110px
+	margin-bottom 3px
+
+	& a
+		cursor pointer
+		flex 1
+		text-decoration none
+		padding 8px
+		color black
+			
+		&:hover
+		&.active
+			background-color #888888
+			color yellow
+
+.nav__title
+	flex 35%
+	font-size 24px
+	text-align center
+	align-content center
+	background-color #d3d3d3
+
+.nav__menu
+	flex 65%
+	display flex
+	flex-direction column
+
+.nav__menu-block1
+	flex 1
+
+.nav__menu-block2
+	flex 1
+	display flex
+	flex-wrap wrap
+	align-items center
+	background-color #d3d3d3
+	margin-left -60px
+
+
+div.gallery
+	display grid
+	grid-template-columns repeat(3, 1fr)
+	grid-gap 1%
+	margin-bottom 3px
+
+	& img
+		width: 100%
+
+main
+	display grid
+	grid-template-columns repeat(4, 1fr)
+	grid-gap 2%
+
+.main__article
+	align-items center
+	padding 10px
+	border 2px solid #e0e0e0
+	border-radius 8px
+
+	& h3
+		margin 0
+		text-align center
+
+	& img
+		height 50px
+		alignment()
+
+footer
+	background-color #6f6d6d
+
+	& h4
+		padding 10px
+		color #f8f8f8
+
+
+.big
+	alignment()
+	height 350px
+	width auto
+
+
+.special-section
+	display: flex
+	justify-content: space-between
+
+	p
+		width: 50%
+
+@media screen and (max-width: 650px)
+	div.gallery
+		grid-template-columns 1fr
+
+		&.gallery:last-of-type
+			margin-bottom 30px
+  
+	main
+		grid-template-columns 1fr
+
+	.main__article:last-of-type
+		margin-bottom 30px
+
+
+	.special-section
+		flex-direction: column
+
+		p
+			width: 100%
+
+@media (max-width: 1000px)
+	nav
+		.nav__title
+			display none
+
+		.nav__menu-block2
+			margin-left 0px
+
+		& a
+			flex 1 1 35%

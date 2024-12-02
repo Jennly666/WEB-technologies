@@ -1,0 +1,79 @@
+mixin createMenu(menu, active)
+	each value, key in menu
+		if active == key
+			a.nav__link.active(href= value)= key
+		else
+			a.nav__link(href= value)= key
+
+mixin createMenuBuild(menu, active)
+	each value, key in menu
+		if key == 'Главная'
+			a(href= value)= 'Главная'
+			a.active(href= "#")= active
+		else
+			a(href= value)= key
+
+mixin filterForm(fields)
+	details
+		summary Фильтр
+		form
+			br
+			each field in fields
+				label(for=field.name) #{field.label}:&nbsp;
+				if field.type === 'range'
+					| от 
+					input(type="text" name=field.name id=field.id) 
+					|  до 
+					input(type="text" name=field.name id=field.id)
+				else
+					input(type="text" name=field.name id=field.id)
+				br
+				br
+
+mixin graphSection(rows)
+	details
+		summary График
+		form
+			table(cellpadding="3")
+				tr
+					td: strong Значение по оси OX
+					td: strong Результат
+				each row in rows
+					tr
+						td
+							input(type="radio" name="gender" value=row.radioValue)
+							| #{row.radioLabel}&nbsp;
+						td
+							input(type="checkbox" name="language" value=row.checkboxValue)
+							| #{row.checkboxLabel}&nbsp;
+			input(type="button" value="Построить")
+			br
+			br
+
+mixin sortSection(levels)
+	details
+		summary Сортировка
+		each level, index in levels
+			p
+				form
+					| #{level.name}:&nbsp;
+					select(name=level.selectName)
+						each option in sortOptions
+							option(
+								value=option.value 
+								selected=option.selected ? true : false
+							)
+								| #{option.label}
+					| &nbsp;По убыванию?
+					input(type="checkbox" name=level.checkboxName value=index)
+
+mixin tableComponent(headers)
+	br
+	table(border="1" cellspacing="0")
+		tr
+			each header in headers
+				td #{header}&nbsp;
+		each row in data
+			tr
+				each cell in row
+					td #{cell}

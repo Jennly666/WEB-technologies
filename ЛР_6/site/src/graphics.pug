@@ -1,0 +1,31 @@
+extends template
+
+block menuItem
+    +createMenu(dictMenu, 'Таблицы')
+
+block content
+
+    p= structures[1].firstP
+    p= structures[1].secondP
+
+    +graphSection([
+        {radioValue: 'w', radioLabel: 'Модель', checkboxValue: '0', checkboxLabel: 'Макс ёмкость'},
+        {radioValue: 'w', radioLabel: 'Тип', checkboxValue: '1', checkboxLabel: 'Мин ёмкость'},
+        {radioValue: 'm', radioLabel: 'Год', checkboxValue: '2', checkboxLabel: 'Количество смартфонов'}
+    ])
+
+    +filterForm([
+        {name: 'model', label: 'Модель', type: 'text', id: 'filter-model'},
+        {name: 'tip', label: 'Тип', type: 'text', id: 'filter-tip'},
+        {name: 'year', label: 'Выпуск', type: 'range', id: 'filter-year'},
+        {name: 'capacity', label: 'Ёмкость', type: 'range', id: 'filter-capacity'},
+        {name: 'weight', label: 'Вес', type: 'range', id: 'filter-weight'}
+    ])
+
+    +sortSection([
+        { name: 'Первый уровень', selectName: 'first level', checkboxName: 'first_level' },
+        { name: 'Второй уровень', selectName: 'second level', checkboxName: 'second_level' },
+        { name: 'Третий уровень', selectName: 'third level', checkboxName: 'third_level' }
+    ])
+
+    +tableComponent(headers, data)

@@ -1,0 +1,12 @@
+extends template
+
+block menuItem
+    +createMenuBuild(dictMenu, 'iPhone 15')
+
+block content
+
+    img.big(src= require("./images/" + structures[0].pict))
+
+    section.special-section
+        p= structures[0].firstP
+        p= structures[0].secondP

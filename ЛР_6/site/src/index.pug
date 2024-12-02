@@ -1,0 +1,15 @@
+extends template
+
+block content
+  div.gallery
+    each pict in listImages
+      a(href= "info.html")
+        img(src= require("./images/" + pict))
+
+  main
+    each item in listSections
+      .main__article
+        img(src= require("./images/" + item.image))
+        h3= item.header
+        p= item.text
+          a(href="#") &hellip;

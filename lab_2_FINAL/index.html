@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Эволюция смартфонов Apple</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JavaScript/data.js"></script>
+  <script src="JavaScript/table.js"></script>
+  <script src="JavaScript/filter.js"></script>
+  <script src="JavaScript/sort.js"></script>
+  <script src="JavaScript/main.js"></script>
+</head>
+<body>
+  <h2>
+    <a href="site_1.html">Главная страница</a> 
+    <a href="site_2.html">Самые свежие модели</a> 
+    <a href="site_3.html">Таблица для сравнения айфонов</a>
+  </h2>
+  <p>
+    Иногда возникает задача сравнить модели iPhone по некоторым параметрам — ёмкость аккумулятора, качество камеры, размер оперативной памяти, и, как оказалось, простой таблицы сравнения параметров айфонов, отсортированных по годам нет.
+  </p>
+  <p>
+    Эта таблица как раз была создана чтобы решить этот вопрос исчерпывающе.
+  </p>
+
+  <details>
+    <summary>График</summary>
+      <form id="graph">
+        <table cellpadding="3">
+          <tr>
+            <td><strong>Значение по оси OX </strong></td>
+            <td><strong>Результат </strong></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="gender" value="w">Модель </td>
+            <td><input type="checkbox" name="language" value="0">Макс ёмкость </td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="gender" value="w">Тип </td>
+            <td><input type="checkbox" name="language" value="1">Мин ёмкость </td>   
+          </tr>
+          <tr>
+            <td><input type="radio" name="gender" value="m">Год </td>
+            <td><input type="checkbox" name="language" value="2">Количество смартфонов</td>
+          </tr>
+        </table>
+        <input type="button" value="Построить">
+      </form>
+  </details>
+
+  <details>
+    <summary>Фильтр</summary>
+    <form id="filter">
+      <p><label for="model">Модель:</label> <input type="text" id="model"></p>
+      <p><label for="tip">Тип:</label> <input type="text" id="tip"></p>
+      <p><label for="modelNumber">Номер модели:</label> <input type="text" id="modelNumber"></p>
+      <p>
+        <label>Выпуск:</label>
+        от <input type="number" id="yearFrom">
+        до <input type="number" id="yearTo">
+      </p>
+      <p>
+        <label>Ёмкость:</label>
+        от <input type="number" id="capacityFrom">
+        до <input type="number" id="capacityTo">
+      </p>
+      <p>
+        <label>Вес:</label>
+        от <input type="number" id="weightFrom">
+        до <input type="number" id="weightTo">
+      </p>
+      <input type="button" id="findButton" value="Найти">
+      <input type="button" id="clearFiltersButton" value="Очистить фильтры">
+    </form>
+  </details>
+
+  <details>
+    <summary>Сортировка</summary>
+    <form id="sort">
+      <p>Первый уровень: 
+        <select id="fieldsFirst"></select>
+        По убыванию? <input type="checkbox" id="fieldsFirstDesc">
+      </p>
+      <p>Второй уровень: 
+        <select id="fieldsSecond"></select>
+        По убыванию? <input type="checkbox" id="fieldsSecondDesc">
+      </p>
+      <p>Третий уровень: 
+        <select id="fieldsThird"></select>
+        По убыванию? <input type="checkbox" id="fieldsThirdDesc">
+      </p>
+      <input type="button" id="sortButton" value="Сортировать">
+      <input type="button" id="resetSortButton" value="Сбросить сортировку">
+    </form>
+  </details>
+
+  <table id="iphoneTable" border="1" cellspacing="0"></table>
+</body>
+</html>

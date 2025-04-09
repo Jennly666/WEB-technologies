@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+}
+
+h2 a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+h2 a:hover {
+    color: #2980b9;
+}
+
+p {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 15px;
+}
+
+details {
+    width: 70%;
+    max-width: 1000px;
+    margin: 15px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+summary {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    cursor: pointer;
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+form {
+    padding: 10px;
+}
+
+#filter p, #sort p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+#filter label, #sort label {
+    margin-right: 10px;
+}
+
+#filter input[type="text"], 
+#filter input[type="number"], 
+#sort select {
+    width: 120px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#sort select:disabled {
+    background: #f0f0f0;
+    opacity: 0.7;
+}
+
+#filter input[type="button"], 
+#sort input[type="button"],
+#graph input[type="button"] {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#filter input[type="button"], 
+#sort input[type="button"] {
+    background: #3498db;
+}
+
+#filter input[type="button"]:hover, 
+#sort input[type="button"]:hover {
+    background: #2980b9;
+}
+
+#clearFiltersButton {
+    background: #e74c3c;
+}
+
+#clearFiltersButton:hover {
+    background: #c0392b;
+}
+
+#graph input[type="button"] {
+    background: #27ae60; /* Зелёный для "Построить" */
+}
+
+#graph input[type="button"]:hover {
+    background: #219653; /* Тёмный зелёный при наведении */
+}
+
+#sort input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+#iphoneTable {
+    width: 70%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+#iphoneTable th {
+    background: #2c3e50;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#iphoneTable td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#iphoneTable tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+#iphoneTable tr:hover {
+    background: #eef2f7;
+}
+
+@media (max-width: 600px) {
+    h2, p, details, #iphoneTable {
+        width: 90%;
+    }
+    #filter p, #sort p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #filter input[type="text"], 
+    #filter input[type="number"], 
+    #sort select {
+        width: 100%;
+    }
+}

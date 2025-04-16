@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title> Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="JavaScript/image.js"></script>
+    <script src="JavaScript/path.js"></script>
+    <script src="JavaScript/main.js"></script>
+  </head>
+  <body>   
+    <form id="setting">
+        <p>
+          <input type="checkbox" id="enableAnimation">
+          <label for="enableAnimation">Включить анимацию?</label>
+        </p>
+        <div id="pathMovementSettings" style="display: none;">
+          <p>
+            <input type="checkbox" id="enablePathMovement">
+            <label for="enablePathMovement">Перемещение вдоль пути</label>
+          </p>
+        </div>
+
+        <div id="coordinatesSettings">
+          <p><b>Координаты рисунка</b><br>
+            <label for="cx">x: </label>
+            <input type="number" id="cx" value="300" max="600" min="0"><br>
+            <label for="cy">y: </label>
+            <input type="number" id="cy" value="300" max="600" min="0">
+          </p>
+        </div>
+
+        <div id="pathSettings" style="display: none;">
+          <p><b>Пути перемещения</b><br>
+            <select id="pathType">
+              <option value="0">Буквой "Г"</option>
+              <option value="1">По кругу</option>
+            </select>
+          </p>
+        </div>
+
+        <div id="drawSettings">
+          <p><b>Масштаб</b><br>
+            <label for="scaleX">по x: </label>
+            <input type="number" id="scaleX" value="1" step="0.1" min="0.1" max="5"><br>
+            <label for="scaleY">по y: </label>
+            <input type="number" id="scaleY" value="1" step="0.1" min="0.1" max="5">
+          </p>
+          <p><b>Поворот</b><br>
+            <label for="rotate">угол: </label>
+            <input type="number" id="rotate" value="0" min="-360" max="360">
+          </p>
+        </div>
+
+        <div id="animationSettings" style="display: none;">
+          <div id="animationCoordinatesSettings">
+            <p><b>Координаты рисунка</b><br>
+              <label for="cx_finish">до x: </label>
+              <input type="number" id="cx_finish" value="300" max="600" min="0"><br>
+              <label for="cy_finish">до y: </label>
+              <input type="number" id="cy_finish" value="300" max="600" min="0">
+            </p>
+          </div>
+          <div id="animationTransformSettings">
+            <p><b>Масштаб</b><br>
+              <label for="scaleX_finish">до x: </label>
+              <input type="number" id="scaleX_finish" value="1" step="0.1" min="0.1" max="5"><br>
+              <label for="scaleY_finish">до y: </label>
+              <input type="number" id="scaleY_finish" value="1" step="0.1" min="0.1" max="5">
+            </p>
+            <p><b>Поворот</b><br>
+              <label for="rotate_finish">до: </label>
+              <input type="number" id="rotate_finish" value="0" min="-360" max="360">
+            </p>
+          </div>
+          <div id="animationTypeSettings">
+            <p><b>Способ анимации</b><br>
+              <select id="animationType">
+                <option value="linear">linear</option>
+                <option value="elastic">elastic</option>
+                <option value="bounce">bounce</option>
+              </select>
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <input type="button" value="Нарисовать" id="drawButton">
+          <input type="button" value="Анимировать" id="animateButton" style="display: none;">
+          <input type="button" value="Очистить" id="clearButton">
+        </p>
+    </form>
+
+    <svg></svg>
+
+  </body>
+</html>

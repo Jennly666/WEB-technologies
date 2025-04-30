@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Lab3</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<svg width="800" height="600"></svg>
+
+<form id="controls">
+  <label>
+    Duration (ms):
+    <input type="number" id="duration" value="5000" min="100">
+  </label>
+
+  <hr>
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" id="zoomCheck" checked > Zoom Effect
+    </label>
+    <label>
+      Zoom Factor:
+      <input type="range" id="zoomFactor" min="0.5" max="2" step="0.1" value="1.5">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" id="rotateCheck" checked> Rotation
+    </label>
+    <label>
+      Rotation Speed (deg/sec):
+      <input type="number" id="rotateSpeed" value="90" min="0">
+    </label>
+  </div>
+
+  <button type="button" id="start">Start Animation</button>
+  <button type="button" id="clear">Clear</button>
+</form>
+
+<script>
+  const svg = d3.select("svg");
+  const width = +svg.attr("width");
+  const height = +svg.attr("height");
+
+  // Group
+  const group = svg.append("g")
+    .attr("id", "drawingGroup")
+    .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+  group.append("circle").attr("r", 20).attr("fill", "salmon"); // Лицо
+  group.append("circle").attr("cx", -10).attr("cy", -10).attr("r", 5).attr("fill", "white"); // Левый глаз
+  group.append("circle").attr("cx", 10).attr("cy", -10).attr("r", 5).attr("fill", "white"); // Правый глаз
+  group.append("rect").attr("x", -15).attr("y", 20).attr("width", 30).attr("height", 10).attr("fill", "blue"); // Рубашка
+  group.append("polygon").attr("points", "-10,30 0,10 10,30").attr("fill", "green"); // Галстук
+  group.append("text").attr("x", 0).attr("y", 50).attr("text-anchor", "middle").text("Artem").attr("fill", "black"); // Label
+
+  // Heart Equation
+  function heartEquation(theta) {
+    const sinT = Math.sin(theta);
+    const cosT = Math.cos(theta);
+    const x = 16 * Math.pow(sinT, 3);
+    const y = 13 * cosT - 5 * Math.cos(2 * theta) - 2 * Math.cos(3 * theta) - Math.cos(4 * theta);
+    return { x, y };
+  }
+
+  // Path Data
+  const pathData = d3.range(0, 2 * Math.PI, 0.01)
+    .map(t => {
+      const { x, y } = heartEquation(t);
+      const scale = 12;
+      return [width / 2 + x * scale, height / 2 + y * scale];
+    });
+
+  // Draw Heart Path
+  const line = d3.line()
+    .x(d => d[0])
+    .y(d => d[1]);
+
+  svg.append("path")
+    .datum(pathData)
+    .attr("d", line)
+    .attr("stroke", "#ff3333")
+    .attr("stroke-width", 2)
+    .attr("fill", "none")
+    .attr("stroke-dasharray", "5,5");
+
+  // Start Button
+  document.getElementById("start").addEventListener("click", () => {
+    const duration = +document.getElementById("duration").value;
+    const enableZoom = document.getElementById("zoomCheck").checked;
+    const zoomFactor = +document.getElementById("zoomFactor").value;
+    const enableRotate = document.getElementById("rotateCheck").checked;
+    const rotateSpeed = +document.getElementById("rotateSpeed").value;
+
+    if (window.heartAnimation) window.heartAnimation.stop();
+
+    let startTime = null;
+    window.heartAnimation = d3.timer((elapsed) => {
+      if (!startTime) startTime = elapsed;
+      const current = elapsed - startTime;
+
+      if (current > duration) {
+        window.heartAnimation.stop();
+        return;
+      }
+
+      const theta = 2 * Math.PI - (current / duration) * 2 * Math.PI;
+      const shiftedTheta = theta + Math.PI;
+      const { x: hx, y: hy } = heartEquation(shiftedTheta);
+
+      const scaleFactor = 12;
+      const tx = width / 2 + hx * scaleFactor;
+      const ty = height / 2 + hy * scaleFactor;
+
+      // Zoom
+      let scale = 1;
+      if (enableZoom) {
+        const freq = 2 * Math.PI * 2;
+        const offset = (zoomFactor - 1) * (1 + Math.sin(freq * current / 1000)) / 2;
+        scale = 1 + offset;
+      }
+
+      // Rotation
+      let angle = 0;
+      if (enableRotate) {
+        angle = (rotateSpeed * current) / 1000;
+        angle %= 360;
+      }
+
+      d3.select("#drawingGroup")
+        .attr("transform", `translate(${tx}, ${ty}) scale(${scale}) rotate(${angle} 0 0)`);
+    });
+  });
+
+  // Clear Button
+  document.getElementById("clear").addEventListener("click", () => {
+    if (window.heartAnimation) window.heartAnimation.stop();
+    d3.select("#drawingGroup")
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
+  });
+</script>
+</body>
+</html>

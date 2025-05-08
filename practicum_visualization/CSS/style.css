@@ -1,0 +1,18 @@
+body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #4a6fa5; color: #fff; padding: 0.6rem; }
+td { padding: 0.5rem; border-bottom: 1px solid #e0e7ff; }
+tr:hover { background: #f0f4ff; }
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+svg text {
+    font: 8px Verdana;
+}
+svg path, line {
+    fill: none;
+    stroke: #333333;
+    width: 1px;
+}

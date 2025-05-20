@@ -1,0 +1,181 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+    text-align: center;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+}
+
+h2 a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+h2 a:hover {
+    color: #2980b9;
+}
+
+p {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 15px;
+}
+
+details {
+    width: 70%;
+    max-width: 1000px;
+    margin: 15px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+summary {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    cursor: pointer;
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+form {
+  padding: 10px;
+}
+
+form p {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+form label {
+  margin-right: 10px;
+}
+
+form input[type='text'],
+form input[type='number'] {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button[type='submit'] {
+  background: #3498db;
+}
+
+form button[type='submit']:hover {
+  background: #2980b9;
+}
+
+form button[type='reset'] {
+  background: #e74c3c;
+}
+
+form button[type='reset']:hover {
+  background: #c0392b;
+}
+
+table {
+  width: 70%;
+  max-width: 1000px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+th {
+  background: #2c3e50;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #eef2f7;
+}
+
+tr.hide {
+  display: none;
+}
+
+tr.show {
+  display: table-row;
+}
+
+.pagination {
+  width: 70%;
+  max-width: 1000px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.pagination span {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination span.active {
+  background: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}
+
+.pagination span:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  form,
+  table,
+  .pagination {
+    width: 90%;
+  }
+  form p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  form label,
+  form input[type='text'],
+  form input[type='number'] {
+    width: 100%;
+  }
+}

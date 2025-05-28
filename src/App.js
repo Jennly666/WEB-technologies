@@ -1,12 +1,14 @@
-import React from 'react';
-import ProgressBar from './ProgressBar';
+import './CSS/App.css';
+import buildings from './data.js';
+import Table from './components/Table.js';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <ProgressBar value={16} max={100} label="ВВЕДИ СВОЙ ВОЗРАСТ" />
+    <div className="App">
+      <h3>Самые высокие здания и сооружения</h3>
+      <Table data={buildings} amountRows="15" isPaginated={true} />
     </div>
   );
-};
+}
 
 export default App;
